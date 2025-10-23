@@ -18,9 +18,15 @@ export type Highlight = {
   detail: string;
 };
 
-export type NavLink = {
+export type NavChild = {
   label: string;
   href: string;
+};
+
+export type NavItem = {
+  label: string;
+  href?: string;
+  children?: NavChild[];
 };
 
 export type Event = {
@@ -41,31 +47,31 @@ export type Resource = {
 
 export const personalGames: GameCard[] = [
   {
-    title: "Portal Runner",
+    title: "Tic-Tac-Toe Games",
     description:
-      "Platformer refleks cepat dengan portal antar dimensi dan level yang terus berubah.",
+      "Game klasik untuk dua pemain yang mengasah strategi dan logika dasar.",
     genre: "Platformer",
-    link: "https://example.com/portal-runner",
-    tech: ["Phaser", "TypeScript"],
+    link: "https://tic-tac-toe-games-smkpesat.vercel.app",
+    tech: ["ReactJS", "Javascript"],
     status: "Live",
   },
   {
-    title: "Eco Tycoon",
+    title: "Memory Match",
     description:
-      "Simulator membangun kota hijau. Pemain belajar manajemen energi dan lingkungan.",
+      "Game mencocokkan kartu yang melatih daya ingat dan konsentrasi anak-anak.",
     genre: "Simulasi Edukasi",
-    link: "https://example.com/eco-tycoon",
-    tech: ["React", "Three.js"],
-    status: "Beta",
+    link: "https://memory-games-mu.vercel.app/",
+    tech: ["React", "TypeScript"],
+    status: "Live",
   },
   {
     title: "Robo Puzzle Lab",
     description:
       "Puzzle coding yang mengajarkan logika pemrograman lewat robot lucu dan level menantang.",
     genre: "Puzzle Edukasi",
-    link: "https://example.com/robo-puzzle-lab",
+    link: "https://robo-puzzle-lab.vercel.app/",
     tech: ["Unity", "C#"],
-    status: "Live",
+    status: "In Development",
   },
   {
     title: "Galaxy Rhythm",
@@ -74,7 +80,7 @@ export const personalGames: GameCard[] = [
     genre: "Rhythm",
     link: "https://example.com/galaxy-rhythm",
     tech: ["Godot", "GDScript"],
-    status: "Prototype",
+    status: "Under Maintenance",
   },
 ];
 
@@ -169,15 +175,18 @@ export const communityHighlights: Highlight[] = [
   },
 ];
 
-export const sidebarLinks: NavLink[] = [
-  { label: "Beranda", href: "#hero" },
-  { label: "Games Kamu", href: "#personal-games" },
-  { label: "Games Publik", href: "#public-games" },
-  { label: "Insight", href: "#insight" },
-  { label: "Komunitas", href: "#community" },
-  { label: "Event", href: "#events" },
-  { label: "Resource", href: "#resources" },
-  { label: "Playtest", href: "#playtest" },
+export const portalNavigation: NavItem[] = [
+  { label: "Games Pesat", href: "/games-pesat" },
+  { label: "Games Publik", href: "/games-publik" },
+  { label: "Insight", href: "/insight" },
+  {
+    label: "Komunitas",
+    children: [
+      { label: "Event", href: "/komunitas/events" },
+      { label: "Resource", href: "/komunitas/resources" },
+      { label: "Playtest", href: "/komunitas/playtest" },
+    ],
+  },
 ];
 
 export const friendlyGenres = [

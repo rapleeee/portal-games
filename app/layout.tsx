@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+import { AppShell } from "@/app/components/app-shell";
 
 export const metadata: Metadata = {
   title: "Portal Games Hub",
@@ -21,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
-        {children}
+      <body className="antialiased">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
