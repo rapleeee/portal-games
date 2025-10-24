@@ -65,6 +65,15 @@ export const personalGames: GameCard[] = [
     status: "Live",
   },
   {
+    title: "Take the Cherry",
+    description:
+      "Platformer sederhana di mana pemain mengendalikan karakter untuk mengumpulkan ceri sambil menghindari rintangan.",
+    genre: "Platformer",
+    link: "https://drive.google.com/file/d/1XK_l4Gudspr3kji8xSkP--7muvi2Y7eH/view?usp=sharing",
+    tech: ["Godot", "C#"],
+    status: "Live",
+  },
+  {
     title: "Robo Puzzle Lab",
     description:
       "Puzzle coding yang mengajarkan logika pemrograman lewat robot lucu dan level menantang.",
